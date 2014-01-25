@@ -1,0 +1,30 @@
+<h2>Create New Event</h2>
+
+<%= flash[:error] %>
+<%= form_for @event do |form| %>
+	<div>
+		<%= form.label :name %><br />
+    	<%= form.text_field :name %>
+	</div>
+	<div>
+		<%= form.label :description %><br />
+    	<%= form.text_field :description %>
+	</div>
+	<div>
+		<%= form.label :location %><br />
+    	<%= form.text_field :location %>
+	</div>
+	  <p><%= form.submit %></p>
+<% end %>
+
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

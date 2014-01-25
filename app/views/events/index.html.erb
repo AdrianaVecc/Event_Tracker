@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <h1>Event Tracker</h1>
+  <p>Planning an event? Track the participants here!</p>
+  <p><%= link_to "Create New Event", new_event_url, :class => "btn btn-primary btn-large" %></p>
+</div>
+ 
+<table class="table table-striped">
+  <thead>
+    <th>Event</th>
+    <th>Total Participants</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= link_to event.name, event_path(event) %> - <%= event.description %><br />
+          <%= event.location %>
+        </td>
+        <td><%= event.total_participants %></td>
+        <td>
+          <%= link_to "Edit", edit_event_path(event) %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

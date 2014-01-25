@@ -1,0 +1,19 @@
+<h2><%= @event.name %></h2>
+<h3><%= @event.description %></h3>
+<p><%= @event.location %></p>
+
+<h3>Participants</h3>
+<ul>
+<% @event.participants.each do |single_participant| %>
+<li><strong><%= single_participant.popularity_label %></strong> <%= single_participant.name %> is bringing <%= single_participant.guests %> guests<br />
+    Bringing a guest?  <%= button_to "Guest +1", add_guest_event_participant_path(@event.id, single_participant.id) %>
+  </li>
+<% end %>
+</ul>
+
+<h2>Add Participant</h2>
+ 
+<%= form_for [@event, @event.participants.new]  do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
