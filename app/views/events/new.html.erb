@@ -1,7 +1,10 @@
+<div><p><%= link_to "Back to Event List", events_url, :class => "btn btn-primary btn-large" %></p></div>
+
 <h2>Create New Event</h2>
 
 <%= flash[:error] %>
 <%= form_for @event do |form| %>
+
 	<div>
 		<%= form.label :name %><br />
     	<%= form.text_field :name %>
@@ -14,7 +17,9 @@
 		<%= form.label :location %><br />
     	<%= form.text_field :location %>
 	</div>
-	  <p><%= form.submit %></p>
+  <div><p></p></div>
+
+	  <p><%= form.submit :class => "btn btn-success btn-large" %></p>
 <% end %>
 
 <% if @event.errors.any? %>
@@ -28,3 +33,5 @@
     </ul>
   </div>
 <% end %>
+
+<footer>A website made with <img src="http://mytwitterweighsaton.com/images/emoji/emoji-E022.png"> by <a href="http://adrianavecchioli.com" target="_blank"><strong>Adriana Vecchioli</strong></a> & <a href="http://railsgirls.com/nyc" target="_blank">RailsGirlsNYC</a> - 2014</footer>

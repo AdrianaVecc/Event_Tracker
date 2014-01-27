@@ -1,7 +1,7 @@
 <div class="jumbotron">
-  <h1>Event Tracker</h1>
-  <p>Planning an event? Track the participants here!</p>
-  <p><%= link_to "Create New Event", new_event_url, :class => "btn btn-primary btn-large" %></p>
+  <h1>Event Tracker!</h1>
+  <p>Planning an event? Track your participants here!</p>
+  <p><%= link_to "Create New Event", new_event_url, :class => "btn btn-success btn-large" %></p>
 </div>
  
 <table class="table table-striped">
@@ -19,10 +19,12 @@
         </td>
         <td><%= event.total_participants %></td>
         <td>
-          <%= link_to "Edit", edit_event_path(event) %>
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to "Edit", edit_event_path(event), :class => "btn btn-primary" %>
+          <%= button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<footer>A website made with <img src="http://mytwitterweighsaton.com/images/emoji/emoji-E022.png"> by <a href="http://adrianavecchioli.com" target="_blank"><strong>Adriana Vecchioli</strong></a> & <a href="http://railsgirls.com/nyc" target="_blank">RailsGirlsNYC</a> - 2014</footer>
