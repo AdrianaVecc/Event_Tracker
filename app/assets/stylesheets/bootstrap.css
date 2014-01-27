@@ -1872,6 +1872,12 @@ label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
+  border-radius: 5px;
+  background-color: #EDE9F5;
+}
+
+input {
+    border-radius: 5px;
 }
 
 input[type="search"] {
@@ -2268,6 +2274,7 @@ textarea.input-lg {
        -o-user-select: none;
           user-select: none;
 }
+
 
 .btn:focus {
   outline: thin dotted;
@@ -5226,7 +5233,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color:#eeeeee;
 }
 
 .jumbotron h1,
@@ -7119,4 +7126,8 @@ td.visible-print {
 footer {
   display:block;
   text-align: center;
+}
+
+.td-action {
+  white-space: nowrap;
 }
