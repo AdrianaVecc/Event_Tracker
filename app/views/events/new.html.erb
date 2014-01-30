@@ -1,22 +1,24 @@
 <div><p><%= link_to "Back to Event List", events_url, :class => "btn btn-primary btn-large" %></p></div>
 
-<h2>Create New Event</h2>
+<div><h2>Create New Event</h2></div>
 
 <%= flash[:error] %>
 <%= form_for @event do |form| %>
 
-	<div>
-		<%= form.label :name %><br />
-    	<%= form.text_field :name %>
-	</div>
-	<div>
-		<%= form.label :description %><br />
-    	<%= form.text_field :description %>
-	</div>
-	<div>
-		<%= form.label :location %><br />
-    	<%= form.text_field :location %>
-	</div>
+  <div>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </div>
+ 
+  <div>
+    <%= form.label :description %><br />
+    <%= form.text_field :description %>
+  </div>
+ 
+  <div>
+    <%= form.label :location %><br />
+    <%= form.text_field :location %>
+  </div>
   <div><p></p></div>
 
 	  <p><%= form.submit :class => "btn btn-success btn-large" %></p>

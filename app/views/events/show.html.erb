@@ -1,13 +1,14 @@
 <div><p><%= link_to "Back to Event List", events_url, :class => "btn btn-primary btn-large" %></p></div>
 
-<h1><%= @event.name %></h1>
-<h3><%= @event.description %></h3>
-<p><%= @event.location %></p>
+<div class="jumbotron">
+	<h1><%= @event.name %></h1>
+	<h3><%= @event.description %></h3>
+	<p><%= @event.location %></p></div>
 
 <h2>Participants</h2>
 <ul>
 <% @event.participants.each do |single_participant| %>
-<li><strong><%= single_participant.popularity_label %></strong> <%= single_participant.name %> is bringing <%= single_participant.guests %> guests<br />
+<li><strong><%= single_participant.popularity_label %></strong> <%= single_participant.name %> is bringing <%= pluralize(single_participant.guests, "guest") %><br />
     <table>
     <tbody><td>Bringing a guest?</td>
     	<td><%= button_to "+1", add_guest_event_participant_path(@event.id, single_participant.id), :class => "btn btn-xs"  %></td></tbody>

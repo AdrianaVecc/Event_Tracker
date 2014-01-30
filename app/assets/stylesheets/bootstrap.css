@@ -306,7 +306,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
+
 }
 
 input,
@@ -1872,12 +1873,11 @@ label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
-  border-radius: 5px;
-  background-color: #EDE9F5;
 }
 
 input {
     border-radius: 5px;
+    border-color: #B8B8B8;
 }
 
 input[type="search"] {
@@ -5233,7 +5233,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color:#eeeeee;
+  background-color:#FFDBB3;
 }
 
 .jumbotron h1,

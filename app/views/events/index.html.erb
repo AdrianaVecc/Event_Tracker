@@ -8,7 +8,7 @@
   <thead>
     <th>Event</th>
     <th>Total Participants</th>
-    <th colspan="2">Actions</th>
+    <th>Actions</th>
   </thead>
   <tbody>
     <% @events.each do |event| %>
@@ -18,9 +18,9 @@
           <%= event.location %>
         </td>
         <td><%= event.total_participants %></td>
-        <td>
-          <%= link_to "Edit", edit_event_path(event), :class => "btn btn-primary" %></td>
-          <td><%= button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></div>
+        <td><div style="float:left; margin-right:5px; margin-bottom:2px" >
+          <%= link_to 'Edit', edit_event_path(event), :class => "btn btn-primary btn-sm" %></div>
+           <div style="float:left;"><%= button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></div>
         </td>
       </tr>
     <% end %>
