@@ -7,17 +7,22 @@ def create
     else
       redirect_to event_url(@event)
     end
-  end
+end
 
-  def participant_params
+def participant_params
 		params[:participant].permit(:name)
-	end
+end
 
-	def add_guest
+def add_guest
     @event = Event.find(params[:event_id])
     @participant = Participant.find(params[:id])
     @participant.guests += 1
     @participant.save
     redirect_to event_url(@event)
-  	end
+end
+
+def delete_guest
+    @event = Event.find(params[:event_id])
+    @participant = Participant.find(params[:id])
+    @participant.destroy
 end

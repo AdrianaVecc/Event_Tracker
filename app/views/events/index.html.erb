@@ -7,7 +7,7 @@
 <table class="table table-striped">
   <thead>
     <th>Event</th>
-    <th>Total Participants</th>
+    <th>Attending</th>
     <th>Actions</th>
   </thead>
   <tbody>
@@ -15,12 +15,12 @@
       <tr>
         <td>
           <%= link_to event.name, event_path(event) %> - <%= event.description %><br />
-          <%= event.location %>
+          <img src="https://31.media.tumblr.com/86bd39d5729016a8384bd2883405bbf2/tumblr_n0ccdlln891r1o3ypo1_1280.png" height="12"><%= event.location %>
         </td>
         <td><%= event.total_participants %></td>
-        <td><div style="float:left; margin-right:5px; margin-bottom:2px" >
+        <td><div style="float:left; margin-right:5px;" >
           <%= link_to 'Edit', edit_event_path(event), :class => "btn btn-primary btn-sm" %></div>
-           <div style="float:left;"><%= button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></div>
+           <div style="float:left;"><%= button_to 'X', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></div>
         </td>
       </tr>
     <% end %>
