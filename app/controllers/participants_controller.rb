@@ -20,9 +20,3 @@ def add_guest
     @participant.save
     redirect_to event_url(@event)
 end
-
-def delete_guest
-    @event = Event.find(params[:event_id])
-    @participant = Participant.find(params[:id])
-    @participant.destroy
-end
